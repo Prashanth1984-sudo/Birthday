@@ -1,0 +1,1407 @@
+/* ==========================================
+   LETTER SECTION
+========================================== */
+
+#letter{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+        radial-gradient(circle at top,#2b1b2d 0%,#140f1d 45%,#08070d 100%);
+}
+
+/* ==========================================
+   WARM LIGHT
+========================================== */
+
+.letterLight{
+    position:absolute;
+    width:1200px;
+    height:1200px;
+    border-radius:50%;
+    background:
+        radial-gradient(circle,
+        rgba(255,225,185,.18),
+        rgba(255,180,120,.08),
+        transparent 70%);
+    filter:blur(120px);
+    animation:lightMove 8s ease-in-out infinite;
+}
+
+@keyframes lightMove{
+
+0%,100%{
+
+transform:
+translateY(0)
+scale(1);
+
+}
+
+50%{
+
+transform:
+translateY(-25px)
+scale(1.05);
+
+}
+
+}
+
+/* ==========================================
+   FLOATING PARTICLES
+========================================== */
+
+.paperParticles{
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+overflow:hidden;
+
+}
+
+.paperParticles span{
+
+position:absolute;
+
+width:4px;
+
+height:4px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.18);
+
+animation:particleFloat linear infinite;
+
+}
+
+@keyframes particleFloat{
+
+0%{
+
+transform:
+translateY(50px);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(-120vh);
+
+opacity:0;
+
+}
+
+}
+
+/* ==========================================
+   ENVELOPE CONTAINER
+========================================== */
+
+.envelopeContainer{
+
+position:absolute;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:100;
+
+}
+
+/* ==========================================
+   ENVELOPE
+========================================== */
+
+.envelope{
+
+position:relative;
+
+width:430px;
+
+height:290px;
+
+cursor:pointer;
+
+transform-style:preserve-3d;
+
+transition:.8s;
+
+}
+
+.envelopeBack{
+
+position:absolute;
+
+inset:0;
+
+border-radius:12px;
+
+background:
+
+linear-gradient(
+
+145deg,
+
+#f5e5cb,
+
+#ead4b0
+
+);
+
+box-shadow:
+
+0 35px 90px rgba(0,0,0,.35);
+
+overflow:hidden;
+
+}
+
+.envelopeBack::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+right:0;
+
+bottom:0;
+
+height:60%;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+transparent 49%,
+
+#d8b88d 50%
+
+),
+
+linear-gradient(
+
+225deg,
+
+transparent 49%,
+
+#d8b88d 50%
+
+);
+
+background-size:50% 100%;
+
+background-repeat:no-repeat;
+
+background-position:left,right;
+
+}
+
+/* ==========================================
+   LETTER INSIDE ENVELOPE
+========================================== */
+
+.envelopeLetter{
+
+position:absolute;
+
+left:50%;
+
+bottom:30px;
+
+transform:translateX(-50%);
+
+width:340px;
+
+height:210px;
+
+background:#fffdf8;
+
+border-radius:8px;
+
+box-shadow:
+
+0 8px 20px rgba(0,0,0,.15);
+
+z-index:1;
+
+}
+
+/* ==========================================
+   FLAP
+========================================== */
+
+.envelopeFlap{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:170px;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#efd9b9,
+
+#e7cba3
+
+);
+
+clip-path:polygon(0 0,100% 0,50% 100%);
+
+transform-origin:top;
+
+z-index:3;
+
+}
+
+/* ==========================================
+   WAX SEAL
+========================================== */
+
+.waxSeal{
+
+position:absolute;
+
+left:50%;
+
+top:115px;
+
+transform:translateX(-50%);
+
+width:72px;
+
+height:72px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,
+
+#ff8fa5,
+
+#d63b61);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:28px;
+
+color:white;
+
+z-index:4;
+
+box-shadow:
+
+0 0 25px rgba(255,80,120,.45);
+
+transition:.4s;
+
+}
+
+.waxSeal:hover{
+
+transform:
+
+translateX(-50%)
+
+scale(1.08);
+
+}
+
+/* ==========================================
+   RECEIVER
+========================================== */
+
+.receiver{
+
+position:absolute;
+
+left:50%;
+
+bottom:38px;
+
+transform:translateX(-50%);
+
+letter-spacing:5px;
+
+font-size:13px;
+
+font-weight:500;
+
+color:#5b4532;
+
+z-index:2;
+
+text-transform:uppercase;
+
+}
+
+/* ==========================================
+   LETTER WRAPPER
+========================================== */
+
+.letterWrapper{
+
+position:absolute;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:200;
+
+}
+
+/* ==========================================
+   PAPER
+========================================== */
+
+.paper{
+
+position:relative;
+
+width:min(820px,92vw);
+
+height:min(88vh,950px);
+
+background:
+
+linear-gradient(
+180deg,
+#fffefb,
+#fbf6ee);
+
+border-radius:14px;
+
+overflow:hidden;
+
+opacity:0;
+
+transform:
+
+translateY(180px)
+
+scale(.82);
+
+box-shadow:
+
+0 80px 160px rgba(0,0,0,.45),
+
+0 20px 50px rgba(0,0,0,.18);
+
+pointer-events:auto;
+
+}
+
+/* ==========================================
+   PAPER TEXTURE
+========================================== */
+
+.paperTexture{
+
+position:absolute;
+
+inset:0;
+
+opacity:.05;
+
+background:
+
+repeating-radial-gradient(
+
+circle at 20% 20%,
+
+rgba(0,0,0,.06),
+
+transparent 2px,
+
+transparent 10px
+
+);
+
+mix-blend-mode:multiply;
+
+pointer-events:none;
+
+}
+
+/* ==========================================
+   PAPER INNER
+========================================== */
+
+.paperInner{
+
+position:relative;
+
+height:100%;
+
+overflow-y:auto;
+
+padding:
+
+90px
+
+95px
+
+90px;
+
+scroll-behavior:smooth;
+
+}
+
+.paperInner::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+.paperInner::-webkit-scrollbar-thumb{
+
+background:#d4b37b;
+
+border-radius:20px;
+
+}
+
+/* ==========================================
+   DATE
+========================================== */
+
+.paperTop{
+
+display:flex;
+
+justify-content:flex-end;
+
+}
+
+.letterDate{
+
+font-size:13px;
+
+letter-spacing:4px;
+
+text-transform:uppercase;
+
+color:#8d8d8d;
+
+}
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.letterHeading{
+
+margin-top:35px;
+
+font-family:var(--heading);
+
+font-size:56px;
+
+font-weight:500;
+
+color:#242424;
+
+}
+
+/* ==========================================
+   FOLD LINES
+========================================== */
+
+.foldLine{
+
+position:absolute;
+
+left:60px;
+
+right:60px;
+
+height:1px;
+
+background:
+
+rgba(0,0,0,.07);
+
+}
+
+.foldLine.one{
+
+top:34%;
+
+}
+
+.foldLine.two{
+
+top:67%;
+
+}
+
+/* ==========================================
+   LETTER CONTENT
+========================================== */
+
+#letterText{
+
+margin-top:45px;
+
+font-size:22px;
+
+line-height:2.15;
+
+letter-spacing:.3px;
+
+white-space:pre-line;
+
+color:#444;
+
+min-height:300px;
+
+font-weight:400;
+
+}
+
+/* ==========================================
+   SIGNATURE
+========================================== */
+
+.signature{
+
+margin-top:90px;
+
+opacity:0;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-end;
+
+}
+
+.signature span{
+
+font-size:18px;
+
+color:#666;
+
+margin-bottom:15px;
+
+}
+
+.signature h2{
+
+font-family:"Parisienne",cursive;
+
+font-size:56px;
+
+font-weight:400;
+
+color:#1f1f1f;
+
+text-shadow:
+
+0 4px 12px rgba(0,0,0,.08);
+
+}
+
+/* ==========================================
+   CONTINUE BUTTON
+========================================== */
+
+#continueStory{
+
+margin-top:80px;
+
+padding:
+
+18px
+
+42px;
+
+border:none;
+
+border-radius:50px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#ff8eb7,
+
+#ff5f98
+
+);
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+letter-spacing:1px;
+
+cursor:pointer;
+
+opacity:0;
+
+transform:translateY(20px);
+
+transition:.45s;
+
+box-shadow:
+
+0 20px 40px rgba(255,95,152,.35);
+
+}
+
+#continueStory:hover{
+
+transform:
+
+translateY(-4px)
+
+scale(1.04);
+
+box-shadow:
+
+0 35px 60px rgba(255,95,152,.45);
+
+}
+
+/* ==========================================
+   PAPER SHADOW
+========================================== */
+
+.paper::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+border-radius:14px;
+
+box-shadow:
+
+inset
+
+0 1px 2px
+
+rgba(255,255,255,.8),
+
+inset
+
+0 -2px 8px
+
+rgba(0,0,0,.08);
+
+pointer-events:none;
+
+}
+
+/* ==========================================
+   PAPER EDGE
+========================================== */
+
+.paper::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+right:0;
+
+width:10px;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+rgba(255,255,255,.3),
+
+rgba(0,0,0,.05)
+
+);
+
+}
+
+/* ==========================================
+   PART 3
+   PREMIUM EFFECTS • RESPONSIVE • ANIMATIONS
+========================================== */
+
+/* Floating Petals */
+
+.petals{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:5;
+}
+
+.petal{
+
+    position:absolute;
+
+    width:18px;
+
+    height:18px;
+
+    background:linear-gradient(
+        145deg,
+        #ffbfd6,
+        #ff82af
+    );
+
+    border-radius:
+        0 100% 0 100%;
+
+    opacity:.75;
+
+    animation:petalFall linear infinite;
+
+}
+
+@keyframes petalFall{
+
+0%{
+
+transform:
+translateY(-150px)
+rotate(0deg);
+
+opacity:0;
+
+}
+
+15%{
+
+opacity:.8;
+
+}
+
+100%{
+
+transform:
+translateY(120vh)
+rotate(720deg)
+translateX(120px);
+
+opacity:0;
+
+}
+
+}
+
+/* ========================================== */
+
+.sparkles{
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+}
+
+.sparkle{
+
+position:absolute;
+
+width:3px;
+
+height:3px;
+
+background:white;
+
+border-radius:50%;
+
+animation:sparkle 3s infinite ease-in-out;
+
+}
+
+@keyframes sparkle{
+
+0%,100%{
+
+opacity:.15;
+
+transform:scale(1);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(2.5);
+
+}
+
+}
+
+/* ========================================== */
+
+.envelope.open .envelopeFlap{
+
+transform:
+
+rotateX(180deg);
+
+}
+
+.envelope.open .waxSeal{
+
+opacity:0;
+
+transform:
+
+translateX(-50%)
+
+scale(0);
+
+}
+
+.envelope.open .envelopeLetter{
+
+transform:
+
+translateX(-50%)
+
+translateY(-190px);
+
+}
+
+/* ========================================== */
+
+.envelopeLetter{
+
+position:absolute;
+
+left:50%;
+
+bottom:30px;
+
+transform:translateX(-50%);
+
+width:340px;
+
+height:210px;
+
+background:#fffdf8;
+
+border-radius:8px;
+
+transition:1.2s cubic-bezier(.2,.8,.2,1);
+
+z-index:1;
+
+}
+
+/* ========================================== */
+
+.paper.show{
+
+opacity:1;
+
+transform:
+
+translateY(0)
+
+scale(1);
+
+transition:
+
+1.3s cubic-bezier(.2,.8,.2,1);
+
+}
+
+/* ========================================== */
+
+.signature.show{
+
+opacity:1;
+
+transform:
+
+translateY(0);
+
+transition:
+
+1s;
+
+}
+
+.signature{
+
+transform:
+
+translateY(25px);
+
+}
+
+/* ========================================== */
+
+#continueStory.show{
+
+opacity:1;
+
+transform:
+
+translateY(0);
+
+}
+
+/* ========================================== */
+
+.paper:hover{
+
+transform:
+
+translateY(-2px);
+
+box-shadow:
+
+0 100px 180px rgba(0,0,0,.45);
+
+}
+
+/* ========================================== */
+
+.paperInner p{
+
+animation:
+
+fadeParagraph .8s ease;
+
+}
+
+@keyframes fadeParagraph{
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(10px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0);
+
+}
+
+}
+
+/* ========================================== */
+
+.receiver{
+
+transition:.4s;
+
+}
+
+.envelope:hover .receiver{
+
+letter-spacing:8px;
+
+}
+
+/* ========================================== */
+
+.waxSeal{
+
+animation:
+
+pulseSeal 2.5s infinite;
+
+}
+
+@keyframes pulseSeal{
+
+0%,100%{
+
+box-shadow:
+
+0 0 25px rgba(255,80,120,.45);
+
+}
+
+50%{
+
+box-shadow:
+
+0 0 60px rgba(255,80,120,.75);
+
+}
+
+}
+
+/* ========================================== */
+
+.paperInner{
+
+font-family:
+
+"Poppins",
+
+sans-serif;
+
+}
+
+/* ========================================== */
+
+.letterHeading{
+
+text-shadow:
+
+0 3px 12px rgba(0,0,0,.08);
+
+}
+
+/* ========================================== */
+
+.paper{
+
+backdrop-filter:
+
+blur(4px);
+
+}
+
+/* ========================================== */
+
+#letter{
+
+isolation:isolate;
+
+}
+
+/* ========================================== */
+
+@media(max-width:900px){
+
+.paper{
+
+width:94vw;
+
+height:88vh;
+
+}
+
+.paperInner{
+
+padding:55px;
+
+}
+
+.letterHeading{
+
+font-size:42px;
+
+}
+
+#letterText{
+
+font-size:18px;
+
+line-height:2;
+
+}
+
+.signature h2{
+
+font-size:42px;
+
+}
+
+.envelope{
+
+transform:scale(.8);
+
+}
+
+}
+
+/* ========================================== */
+
+@media(max-width:600px){
+
+.paper{
+
+width:96vw;
+
+height:90vh;
+
+border-radius:10px;
+
+}
+
+.paperInner{
+
+padding:35px;
+
+}
+
+.letterHeading{
+
+font-size:34px;
+
+}
+
+#letterText{
+
+font-size:16px;
+
+}
+
+.signature h2{
+
+font-size:34px;
+
+}
+
+.receiver{
+
+font-size:11px;
+
+letter-spacing:3px;
+
+}
+
+.envelope{
+
+transform:scale(.65);
+
+}
+
+}
+
+/* ========================================== */
+
+.fadeOut{
+
+animation:
+
+fadeOutScene
+
+1.2s forwards;
+
+}
+
+@keyframes fadeOutScene{
+
+to{
+
+opacity:0;
+
+transform:
+
+scale(.95);
+
+}
+
+}
+
+/* ==========================================
+   CINEMATIC OPENING
+========================================== */
+
+.envelopeContainer{
+
+transition:
+
+transform 1.2s ease,
+
+opacity .8s ease;
+
+}
+
+.envelopeContainer.hide{
+
+transform:
+
+translateY(260px)
+
+rotate(-8deg)
+
+scale(.85);
+
+opacity:0;
+
+}
+
+.paper{
+
+z-index:300;
+
+}
+
+.paper.show{
+
+animation:
+
+paperRise
+
+1.6s cubic-bezier(.2,.8,.2,1);
+
+}
+
+@keyframes paperRise{
+
+0%{
+
+transform:
+
+translateY(260px)
+
+scale(.7);
+
+opacity:0;
+
+}
+
+40%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translateY(0)
+
+scale(1);
+
+opacity:1;
+
+}
+
+}
+.letterLight{
+
+opacity:.25;
+
+transition:2s;
+
+animation:lightMove 8s ease-in-out infinite;
+
+}
+
+.paper.show ~ .letterLight{
+
+opacity:.7;
+
+transform:scale(1.2);
+
+}
+.paper{
+
+box-shadow:
+
+0 120px 220px rgba(0,0,0,.45),
+
+0 40px 80px rgba(0,0,0,.18);
+
+}
+
+#continueStory.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+animation:
+
+glowButton
+
+2s infinite;
+
+}
+
+@keyframes glowButton{
+
+0%,100%{
+
+box-shadow:
+
+0 0 25px rgba(255,95,152,.3);
+
+}
+
+50%{
+
+box-shadow:
+
+0 0 55px rgba(255,95,152,.65);
+
+}
+
+}

@@ -1,0 +1,35 @@
+:root{
+
+    /* Colors */
+
+    --bg:#08090d;
+    --bg-light:#12141c;
+
+    --primary:#F6B7C8;
+    --secondary:#E8C56A;
+
+    --white:#ffffff;
+
+    --text:#F3F3F3;
+
+    --muted:#A5A7AE;
+
+    --green:#88B07F;
+
+    /* Fonts */
+
+    --heading:'Playfair Display', serif;
+
+    --body:'Poppins', sans-serif;
+
+    --script:'Parisienne', cursive;
+
+    /* Shadows */
+
+    --shadow:0 20px 60px rgba(0,0,0,.3);
+
+    /* Radius */
+
+    --radius:24px;
+
+}
