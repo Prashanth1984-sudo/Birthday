@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import { typeMemory } from "../../js/typeMemory";
+import { animateBirthday } from "../Birthday/birthday";
 
 export function animateLetter() {
 
@@ -87,6 +88,33 @@ container.classList.add("hide");
                 setTimeout(() => {
 
                     continueBtn.classList.add("show");
+                 continueBtn.addEventListener("click", () => {
+
+    gsap.to("#letter",{
+
+        opacity:0,
+
+        scale:.95,
+
+        duration:1,
+
+        ease:"power2.inOut",
+
+        onComplete(){
+
+            document.getElementById("letter").style.display="none";
+
+            const birthday=document.getElementById("birthday");
+
+            birthday.style.display="flex";
+
+            animateBirthday();
+
+        }
+
+    });
+
+});
 
                 }, 800);
 

@@ -28,6 +28,13 @@ import "./components/Letter/letter.css";
 import { LetterHTML } from "./components/Letter/letter.html";
 
 import { animateLetter } from "./components/Letter/letter";
+
+
+import "./components/Birthday/birthday.css";
+
+import { BirthdayHTML } from "./components/Birthday/birthday.html";
+
+import { animateBirthday } from "./components/Birthday/birthday";
 /* ===========================
    RENDER APP
 =========================== */
@@ -49,6 +56,10 @@ document.querySelector("#app").innerHTML = `
     ${LetterHTML()}
 </section>
 
+<section id="birthdaySection">
+    ${BirthdayHTML()}
+</section>
+
 `;
 
 /* ===========================
@@ -59,6 +70,7 @@ animateIntro();
 animateGarden();
 animateStory();
 animateLetter();
+animateBirthday();
 
 /* ===========================
    BEGIN STORY
